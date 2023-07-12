@@ -93,13 +93,13 @@ class _LoginPageState extends State<LoginPage> {
     children: [
       SizedBox(height: getProportionateScreenHeight(17),),
       BigCard(
-        height: getProportionateScreenHeight(335),
+        height: getProportionateScreenHeight(345),
         width: getProportionateScreenWidth(335),
         child: Padding(padding: const EdgeInsets.all(17),
           child: Column(
             children: [
-              InputField(label: "Email Address", hint: "you@example.com", keyboardType: TextInputType.emailAddress, obscure: false, controller: email,),
-              InputField(label: "Password", hint: "Not less than 8 characters", keyboardType: TextInputType.visiblePassword, obscure: _secureText, controller: password,
+              Expanded(child: InputField(label: "Email Address", hint: "you@example.com", keyboardType: TextInputType.emailAddress, obscure: false, controller: email,)),
+              Expanded(child: InputField(label: "Password", hint: "Not less than 8 characters", keyboardType: TextInputType.visiblePassword, obscure: _secureText, controller: password,
                 suffixIcon: IconButton(
                     icon: Icon(
                       (_secureText
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                       });
                     }
                 ),
-              ),
+              )),
               const SizedBox(height: 18,),
               RectangularTextButton(
                 title: "Log In",

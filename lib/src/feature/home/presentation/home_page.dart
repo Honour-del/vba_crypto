@@ -98,41 +98,43 @@ class _HomePageState extends State<HomePage> {
               child: Padding(padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Wallet',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13
-                          ),
-                        ),
-
-                        OutlinedButton(onPressed: (){},
-                          style: OutlinedButton.styleFrom(
-                            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
-                            side: const BorderSide(
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'Wallet',
+                            style: TextStyle(
                               color: Colors.white,
-                            )
-                          ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SvgPicture.asset('assets/images/Combined Shape.svg', color: Colors.white,),
-                                const SizedBox(width: 2,),
-                                const Text(
-                                  'Binance',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 13
-                                  ),
-                                ),
-                                const Icon(Icons.keyboard_arrow_down_outlined, color: Colors.white, size: 24,),
-                              ],
+                              fontSize: 13
                             ),
-                        ),
-                      ],
+                          ),
+
+                          OutlinedButton(onPressed: (){},
+                            style: OutlinedButton.styleFrom(
+                              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
+                              side: const BorderSide(
+                                color: Colors.white,
+                              )
+                            ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  SvgPicture.asset('assets/images/Combined Shape.svg', color: Colors.white,),
+                                  const SizedBox(width: 2,),
+                                  const Text(
+                                    'Binance',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 13
+                                    ),
+                                  ),
+                                  const Icon(Icons.keyboard_arrow_down_outlined, color: Colors.white, size: 24,),
+                                ],
+                              ),
+                          ),
+                        ],
+                      ),
                     ),
 
                     SizedBox(height: getProportionateScreenHeight(30),),
@@ -166,8 +168,8 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 20,),
 
-            Expanded(
-              flex: 1,
+            SizedBox(
+              height: 100,
               child: Scrollbar(
                 // thickness: 3,
                 controller: controller,

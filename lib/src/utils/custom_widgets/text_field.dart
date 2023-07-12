@@ -15,7 +15,7 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15),
+      padding: const EdgeInsets.only(top: 12),
       child: SizedBox(
         child: Column(
           children: [
@@ -29,7 +29,7 @@ class InputField extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 25,),
+            const SizedBox(height: 19,),
 
             Container(
               decoration: BoxDecoration(

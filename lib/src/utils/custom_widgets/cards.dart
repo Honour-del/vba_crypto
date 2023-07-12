@@ -21,16 +21,16 @@ class VBACard1 extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(20)),
         color: Color.fromRGBO(33, 51, 69, 1),
       ),
-      // height: 70,
+      // height: 100,
       width: getProportionateScreenWidth(90),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SvgPicture.asset(asset, height: 24, color: Colors.white,),
-            const Spacer(),
-            const SizedBox(height: 10,),
+            // const Spacer(),
+            const SizedBox(height: 14,),
             Text(
               name,
               style: const TextStyle( color: Colors.grey),
@@ -62,11 +62,11 @@ class VBACard2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(bottom: 15),
       child: BigCard(
-        height: getProportionateScreenHeight(82),
+        height: getProportionateScreenHeight(100),
         width: getProportionateScreenWidth(335),
-        child: Padding(padding: const EdgeInsets.all(13),
+        child: Padding(padding: const EdgeInsets.only(top: 8, left: 10, right: 15 ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -77,43 +77,43 @@ class VBACard2 extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
-              const SizedBox(height: 1.5,),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
+              // const SizedBox(height: 1.5,),
+              Expanded(child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: const Text(
                       '(Long)',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,
                       ),
                     ),
+                  ),
 
-                    TextButton(onPressed: (){},
-                        style: TextButton.styleFrom(
-                            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
-                            backgroundColor: color2 ?? const Color.fromRGBO(96, 255, 181, 0.3) //TODO
+                  TextButton(onPressed: (){},
+                      style: TextButton.styleFrom(
+                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
+                          backgroundColor: color2 ?? const Color.fromRGBO(96, 255, 181, 0.3) //TODO
+                      ),
+                      child:
+                      Text(
+                        '\u2022 $status',
+                        style: TextStyle(
+                          color: color ?? const Color.fromRGBO(96, 255, 181, 1),
+                          fontSize: 12,
                         ),
-                        child:
-                        Text(
-                          '\u2022 $status',
-                          style: TextStyle(
-                            color: color ?? const Color.fromRGBO(96, 255, 181, 1),
-                            fontSize: 15,
-                          ),
-                        )),
-                  ],
-                ),
-              ),
-              // const Spacer(),
-              const Text(
+                      ))
+                ],
+              )),
+              const SizedBox(height: 8,),
+              const Expanded(child: Text(
                 'Distribution Bot',
                 style: TextStyle(
                   color: Color.fromRGBO(139, 139, 139, 1),
                   fontSize: 12,
                 ),
-              ),
+              )),
             ],
           ),
         ),

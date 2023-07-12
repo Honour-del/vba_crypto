@@ -43,15 +43,18 @@ class Navigation extends StatelessWidget {
       ),
       bottomNavigationBar: BlocBuilder<NavBarBloc, NavBarState>(
         builder: (context, state){
-          return Material(
-            elevation: 0.0,
-            color: const Color.fromRGBO(33, 51, 69, 1),
-            shape: RoundedRectangleBorder(
-                side: BorderSide(
-                  color: const Color.fromRGBO(14, 32, 51, 1),
-                  width: 0.5.w,
-                ),
-                borderRadius: BorderRadius.circular(70.0)),
+          return Container(
+            // elevation: 0.0,
+            // height: 70,
+            decoration: const BoxDecoration(
+              color: Color.fromRGBO(33, 51, 69, 1),
+              borderRadius: BorderRadiusDirectional.only(
+                topEnd: Radius.circular(30),
+                topStart: Radius.circular(30),
+                // bottomEnd: Radius.circular(20),
+                // bottomStart: Radius.circular(20),
+              ),
+            ),
             child: BottomNavigationBar(
               elevation: 0.0,
               // backgroundColor: const Color.fromRGBO(33, 51, 69, 1),
